@@ -48,4 +48,4 @@
 
 ## Ссылки
 
-Packagist: <[https://packagist.org/packages/rusjkh/hangman]>
+Packagist: https://packagist.org/packages/rusjkh/hangman
