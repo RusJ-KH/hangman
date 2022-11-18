@@ -1,13 +1,18 @@
 <?php
 
-require_once(__DIR__ . "/../vendor/autoload.php");
-
-use function rusjkh\hangman\Controller\key;
-
-if (isset($argv[1])) {
-    $key = $argv[1];
-    key($key);
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require_once(__DIR__ . '/../vendor/autoload.php');
 } else {
-    $key = "-n";
-    key($key);
+    require_once(__DIR__ . '/../../../autoload.php');
+}
+
+use function rusjkh\hangman\Controller\menu;
+use function rusjkh\hangman\Controller\menuReplay;
+
+if (isset($argv[1]) && isset($argv[2])) {
+    menuReplay($argv[1], $argv[2]);
+} elseif (isset($argv[1])) {
+    menu($argv[1]);
+} else {
+    menu("-n");
 }
